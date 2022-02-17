@@ -1,9 +1,9 @@
 
 const socketio = require("socket.io");
 
-let db, app, server, io;
+let dal, app, server, io;
 const configure = (obj) => {
-	db = obj.db;
+	dal = obj.dal;
 	app = obj.app;
 	server = require("http").createServer(app);
 	io = socketio(server);
@@ -20,7 +20,7 @@ const configure = (obj) => {
 			//console.log(msg);
 		});
 		socket.on("chatMessage", (msg) => {
-			db.createMessage(msg.channel_id, msg.author_id, msg.body)
+			dal.createMessage(msg.channel_id, msg.author_id, msg.body)
 				.then(msgInDb => {
 					//console.log(msgInDb);
 					io.to(msg.channel_id).emit("message", msgInDb);

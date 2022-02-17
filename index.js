@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
 // const cors = require("cors");
-const io = require('socket.io')(http);
 const session = require("express-session");
 
 const app = express();
 
-const db = require('./db/dal');
-const { server, io } = require('./sockets')({db, app});
+const dal = require('./db/dal');
+const { server, io } = require('./sockets')({dal, app});
 
 
 // var corsOptions = {
@@ -26,7 +25,7 @@ app.use(express.static(path.join(__dirname + "/public")));
 
 
 
-let routeFiles = ['api/orders', 'api/users', 'api/products', 'api/icons'];
+let routeFiles = ['frontend/frontend'];
 const routeManager = require('./routes/manager');
 routeFiles.forEach((file) => {
         let component = require(`./routes/${file}`);

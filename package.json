@@ -15,6 +15,7 @@
     "express-session": "^1.17.2",
     "http": "0.0.1-security",
     "mongodb": "^4.3.1",
+    "path": "^0.12.7",
     "pug": "^3.0.2",
     "socket.io": "^4.4.1"
   }
