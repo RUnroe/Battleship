@@ -1,0 +1,21 @@
+extends layout.pug
+block style
+    title Home &ndash; Battleship
+    link(rel='stylesheet' href='/styles/home.css')
+    script(defer, src="/scripts/home.js") 
+block content
+    .main
+        include navbar.pug
+        .content
+            .navigation-section
+                a.btn.white(href="/find") Find Game
+                p.center OR 
+                a.btn.white(href="/game") Create Game 
+            .scoreboard-section    
+                .scoreboard 
+                    h3.center Top Players
+                    ol 
+                        li 
+                            .scoreboard-player 
+                                p Ryan Unroe 
+                                p 102
