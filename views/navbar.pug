@@ -1,7 +1,8 @@
 nav 
-    .nav-logo 
-        h1 BATTLESHIP 
-    .nav-items 
-        unless userHasSession
-            a.nav-item(href="/signup") Sign Up 
-            a.nav-item(href="/login") Log In 
+    .nav-content
+        a(href="/").nav-logo 
+            h1 BATTLESHIP 
+        .nav-items 
+            unless userHasSession
+                a.nav-item(href="/signup") Sign Up 
+                a.nav-item(href="/login") Log In 
